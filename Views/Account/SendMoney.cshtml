@@ -1,0 +1,164 @@
+@model SelectList
+@section css {
+    <style>
+        .eft-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .header-gradient {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            padding: 2rem;
+            color: white;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(110, 142, 251, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-gradient::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ffd700, #ffa500);
+        }
+
+        .form-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .form-container:hover {
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.75rem;
+            color: #4a5568;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-select, .form-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: #f8fafc;
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-select:focus, .form-input:focus {
+            border-color: #a777e3;
+            box-shadow: 0 0 0 3px rgba(167, 119, 227, 0.2);
+            outline: none;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #ffd700, #ffa500);
+            color: #1a202c;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+        }
+
+        .submit-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.1);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+
+        .submit-btn:hover::after {
+            left: 100%;
+        }
+
+        .input-icon {
+            position: relative;
+        }
+
+        .input-icon i {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            color: #a777e3;
+        }
+    </style>
+}
+
+<div class="eft-container">
+    <!-- Başlık -->
+    <div class="header-gradient">
+        <h1 style="margin: 0; font-weight: 700; font-size: 1.8rem;">EFT İşlemi</h1>
+        <p style="margin: 0.5rem 0 0; opacity: 0.9; font-size: 1rem;">Hızlı ve güvenli para transferi</p>
+        <div class="mt-3">
+            <h5>User Info</h5>
+            <p  class="fw-bold ">Sender Name : @ViewBag.SenderName</p>
+            <p class="fw-bold ">Sender Account : @ViewBag.SenderAccount</p>
+        </div>
+    </div>
+
+    <!-- Form -->
+    <form method="post" asp-action="SendMoney" asp-controller="Account" class="form-container">
+        <input type="hidden" name="SenderId" value="@ViewBag.SenderId">
+        
+        <div class="input-icon">
+            <label class="form-label">
+                <i class="fas fa-credit-card" style="margin-right: 8px;"></i>
+                Hesap Seçiniz
+            </label>
+            <select class="form-select" asp-items="@Model" name="AccountId">
+                <option value="">Lütfen bir hesap seçiniz</option>
+            </select>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        
+        <div class="input-icon">
+            <label class="form-label">
+                <i class="fas fa-money-bill-wave" style="margin-right: 8px;"></i>
+                Gönderilecek Tutar
+            </label>
+            <input type="number" name="Amount" class="form-input" placeholder="0.00">
+            <i class="fas fa-lira-sign"></i>
+        </div>
+        
+        <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
+            FAST EFT GÖNDER
+        </button>
+    </form>
+</div>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">

@@ -1,0 +1,55 @@
+﻿@model FeedbackViewModel
+
+<div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+    <!-- Header with gradient -->
+    <div style="background: linear-gradient(135deg, #6e8efb, #a777e3); padding: 25px; color: white; text-align: center;">
+        <h1 style="margin: 0; font-weight: 600;">TRANSACTION RECEIPT</h1>
+        <p style="margin: 5px 0 0; opacity: 0.9;">Transaction completed successfully</p>
+    </div>
+    
+    <!-- Content -->
+    <div style="padding: 25px; background: white;">
+        <!-- Sender Section -->
+        <div style="margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px dashed #e0e0e0;">
+            <h3 style="color: #6e8efb; margin-top: 0;">Sender Information</h3>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <span style="font-weight: 500; color: #555;">Name:</span>
+                <span class="text-dark fw-bold">@Model.SenderUser.Name</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <span style="font-weight: 500; color: #555;">Account Number:</span>
+                <span class="text-dark fw-bold">@Model.SenderAccount.AccountNumber</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <span style="font-weight: 500; color: #555;">Updated Balance:</span>
+                <span class="text-dark fw-bold" style="font-weight: 600;">@Model.SenderAccount.Balance.ToString("C")</span>
+            </div>
+        </div>
+        
+        <!-- Amount Section -->
+        <div style="text-align: center; margin: 25px 0; padding: 15px; background: linear-gradient(135deg, #f5f7fa, #e4e8f0); border-radius: 10px;">
+            <div style="font-size: 14px; color: #777;">Amount Sent</div>
+            <div style="font-size: 32px; font-weight: 700; color: #2c3e50;">@Model.Amount.ToString("C")</div>
+        </div>
+        
+        <!-- Recipient Section -->
+        <div style="margin-top: 25px;">
+            <h3 style="color: #a777e3; margin-top: 0;">Recipient Information</h3>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <span style="font-weight: 500; color: #555;">Name:</span>
+                <span class="text-dark fw-bold">@Model.RecipientUser.Name</span>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <span style="font-weight: 500; color: #555;">Account Number:</span>
+                <span class="text-dark fw-bold">@Model.RecipientAccount.AccountNumber</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div style="background: #f9f9f9; padding: 15px; text-align: center; color: #777; font-size: 12px;">
+        Transaction ID: @Guid.NewGuid().ToString().ToUpper().Substring(0, 8)
+        <br>
+        Date: @DateTime.Now.ToString("dd MMMM yyyy HH:mm")
+    </div>
+</div>

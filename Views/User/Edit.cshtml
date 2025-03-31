@@ -1,0 +1,30 @@
+﻿@model UserListModel
+
+<div class="form-container">
+    <h2 class="form-title">Edit Page @Model.Name</h2>
+    
+    <form method="post" asp-action="Edit" asp-controller="User">
+        <div class="form-group">
+            <label class="form-label" asp-for="Name">Ad</label>
+            <input type="text" class="form-input" asp-for="Name" placeholder="Kullanıcı adını girin">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label" asp-for="SurName">Soyad</label>
+            <input type="text" class="form-input" asp-for="SurName" placeholder="Kullanıcı soyadını girin">
+            <span asp-validation-for="SurName" class="text-danger"></span>
+        </div>
+        
+        <button type="submit" class="submit-btn">
+            <i class="fas fa-user-plus"></i> Edit
+        </button>
+    </form>
+</div>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<!-- Validation Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>

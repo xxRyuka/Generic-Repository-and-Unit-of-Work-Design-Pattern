@@ -1,0 +1,70 @@
+﻿@model List<UserListModel>
+@{
+    ViewData["Title"] = "Kullanıcı Yönetimi";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+<div class="user-management-container">
+    <!-- Üstteki Buton -->
+    <div class="header-actions">
+        <a asp-action="CreateUser" asp-controller="Home" class="btn btn-create">
+            <i class="fas fa-user-plus"></i> Yeni Kullanıcı Oluştur
+        </a>
+    </div>
+
+    <!-- Kullanıcı Listesi -->
+    <div class="user-list-container">
+        @if (Model.Any())
+        {
+            <table class="user-table text-center">
+                <thead class="div-th">
+                    <tr>
+                        <div class="div-th">
+
+                            <th>Ad</th>
+                            <th>Soyad</th>
+                            <th>Toplam Hesap</th>
+                            <th>İşlemler</th>
+                        </div>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    @foreach (var user in Model)
+                    {
+                        <tr>
+                            <td class="user-td">
+                                <p>@user.Name</p>
+
+                            </td>
+                            <td class="user-td">
+                                <p>@user.SurName</p>
+                            </td>
+                            <td class="user-td text-center"><count-tag count="@user.Id"></count-tag></td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a asp-action="Edit" asp-controller="User" asp-route-id="@user.Id" class="btn btn-edit">
+                                        <i class="fas fa-edit"></i> Düzenle
+                                    </a>
+                                    <form method="post" asp-action="Remove" asp-controller="User" asp-route-id="@user.Id"
+                                        onsubmit="return confirm('Bu kullanıcıyı silmek istediğinize emin misiniz?');">
+                                        <button type="submit" class="btn btn-delete">
+                                            <i class="fas fa-trash-alt"></i> Sil
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div class="empty-state">
+                <i class="fas fa-users-slash"></i>
+                <p>Henüz kayıtlı kullanıcı bulunmamaktadır.</p>
+            </div>
+        }
+    </div>
+</div>

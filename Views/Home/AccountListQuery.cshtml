@@ -1,0 +1,31 @@
+﻿@model List<Account>
+
+<div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px;">
+    <!-- Başlık -->
+    <div style="background: linear-gradient(135deg, #6e8efb, #a777e3); padding: 20px; color: white; text-align: center; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+        <h1 style="margin: 0; font-weight: 600;">Hesap Listesi</h1>
+        <div style="height: 4px; background: linear-gradient(90deg, #ffd700, #ffa500); margin: 10px auto; width: 100px;"></div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+        @foreach(var item in Model)
+        {
+            <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                <h3 style="color: #6e8efb; margin-top: 0; border-bottom: 2px solid #a777e3; padding-bottom: 8px; display: inline-block;">@item.ApplicationUser.Name</h3>
+                
+                <div style="margin-top: 15px;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <span style="font-weight: 500; color: #555;">Hesap No:</span>
+                        <span class="text-bold text-success">@item.AccountNumber</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="font-weight: 500; color: #555;">Bakiye:</span>
+                        <span style="font-weight: 600; color: #a777e3;">@item.Balance.ToString("C")</span>
+                    </div>
+                </div>
+                
+                <div style="height: 2px; background: linear-gradient(90deg, #6e8efb, #a777e3); margin: 15px 0; width: 100%;"></div>
+            </div>
+        }
+    </div>
+</div>

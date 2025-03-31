@@ -1,0 +1,19 @@
+﻿@model List<rdp.Models.ListModel>
+
+<div>
+    @foreach(var item in Model)
+    {
+        <div>
+            <p>
+
+                @item.ListapplicationUser.Name
+            </p>
+            <p>
+                @item.ListAccount.AccountNumber
+                @item.ListAccount.Balance
+
+            </p>
+            <hr>
+        </div>
+    }
+</div>
