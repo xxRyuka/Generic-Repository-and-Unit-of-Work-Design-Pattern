@@ -3,64 +3,38 @@
 }
 @model List<UserListModel>
 
-@section css{
-    <style>
-        .index-btn{
-            display: inline-block; background: linear-gradient(135deg, #6e8efb, #a777e3); 
-            color: white; 
-            padding: 8px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: bold;
-            transition: all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1);
-        }
-        .index-btn:hover{
-            color: white;
-            transform: scale(1.025);
-        }
-    </style>
-}
+<link rel="stylesheet" href="~/css/styles.css" />
 
-<div
-    style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px;">
+<div class="main-container">
     <!-- Başlık -->
-    <div
-        style="background: linear-gradient(135deg, #6e8efb, #a777e3); padding: 25px; color: white; text-align: center; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-        <h1 style="margin: 0; font-weight: 600;">Hoş Geldiniz</h1>
-        <p style="margin: 5px 0 0; opacity: 0.9;">ASP.NET Core ile web uygulamaları geliştirin</p>
-        <div
-            style="height: 4px; background: linear-gradient(90deg, #ffd700, #ffa500); margin: 10px auto; width: 100px;">
-        </div>
+    <div class="gradient-header">
+        <h1>Hoş Geldiniz</h1>
+        <p>ASP.NET Core ile web uygulamaları geliştirin</p>
+        <div class="gold-divider"></div>
     </div>
 
     <h2 style="color: #6e8efb; margin-bottom: 20px;">Kullanıcı Listesi</h2>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+    <div class="grid-container">
         @foreach (var item in Model)
         {
-            <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
-                <h3 style="color: #a777e3; margin-top: 0;">@item.Name @item.SurName</h3>
+            <div class="user-card">
+                <h3>@item.Name @item.SurName</h3>
 
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
                     <span style="font-weight: 500; color: #555;">Toplam Hesap:</span>
                     <count-tag count="@item.Id" style="font-size: 18px; font-weight: 600; color: #6e8efb;"></count-tag>
                 </div>
 
-                <div
-                    style="height: 2px; background: linear-gradient(90deg, #6e8efb, #a777e3); margin: 15px 0; width: 100%;">
-                </div>
+                <div class="purple-divider"></div>
 
-                <a asp-controller="Account" asp-action="GetByUserId" asp-route-userId="@item.Id"
-                    class="index-btn btn">
+                <a asp-controller="Account" asp-action="GetByUserId" asp-route-userId="@item.Id" class="index-btn">
                     Details
                 </a>
 
-                <a asp-controller="Account" asp-action="Create" asp-route-id="@item.Id"
-                 class="index-btn btn">
+                <a asp-controller="Account" asp-action="Create" asp-route-id="@item.Id" class="index-btn">
                     Add Account
                 </a>
-
             </div>
         }
     </div>

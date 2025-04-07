@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\rdp.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Ryuka\\RiderProjects\\rdp\\rdp\\wwwroot\\css\\all.css",
+      "PackagePath": "staticwebassets\\css\\all.css"
+    },
+    {
       "Id": "C:\\Users\\Ryuka\\RiderProjects\\rdp\\rdp\\wwwroot\\css\\form.css",
       "PackagePath": "staticwebassets\\css\\form.css"
     },

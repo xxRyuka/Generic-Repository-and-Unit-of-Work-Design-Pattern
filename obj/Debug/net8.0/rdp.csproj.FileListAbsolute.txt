@@ -134,3 +134,4 @@ C:\Users\Ryuka\RiderProjects\rdp\rdp\obj\Debug\net8.0\rdp.pdb
 C:\Users\Ryuka\RiderProjects\rdp\rdp\obj\Debug\net8.0\rdp.genruntimeconfig.cache
 C:\Users\Ryuka\RiderProjects\rdp\rdp\obj\Debug\net8.0\ref\rdp.dll
 C:\Users\Ryuka\RiderProjects\rdp\rdp\obj\Debug\net8.0\rdp.csproj.CopyComplete
+C:\Users\Ryuka\RiderProjects\rdp\rdp\obj\Debug\net8.0\rdp.sourcelink.json

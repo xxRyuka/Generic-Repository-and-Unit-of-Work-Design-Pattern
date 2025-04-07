@@ -52,10 +52,10 @@ public class HomeController : Controller
             SurName=User.SurName
         });
         _uow.SaveChanges();
-        return View("Privacy");
+        return RedirectToAction("Privacy");
     }
 
-    
+
     public IActionResult AccountList()
     {
         var list = _uow.GetRepository<Account>().GetAll();

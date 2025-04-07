@@ -1,0 +1,323 @@
+/* Common Styles */
+.index-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.2s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.index-btn:hover {
+    color: white;
+    transform: scale(1.025);
+}
+
+/* Main Container */
+.main-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+.gradient-header {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    padding: 25px;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gradient-header h1 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.gradient-header p {
+    margin: 5px 0 0;
+    opacity: 0.9;
+}
+
+.gold-divider {
+    height: 4px;
+    background: linear-gradient(90deg, #ffd700, #ffa500);
+    margin: 10px auto;
+    width: 100px;
+}
+
+/* Card Styles */
+.user-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.user-card h3 {
+    color: #a777e3;
+    margin-top: 0;
+}
+
+.purple-divider {
+    height: 2px;
+    background: linear-gradient(90deg, #6e8efb, #a777e3);
+    margin: 15px 0;
+    width: 100%;
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Form Styles */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-title {
+    color: #6e8efb;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(110, 142, 251, 0.3);
+    width: 100%;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(110, 142, 251, 0.4);
+}
+
+/* Account Creation Page */
+.row-layout {
+    display: flex;
+    gap: 20px;
+}
+
+.col-half {
+    flex: 1;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.section-title {
+    color: #6e8efb;
+    margin-top: 0;
+    border-bottom: 2px solid #a777e3;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.user-info-section {
+    padding: 15px;
+    background: #f9f5ff;
+    border-radius: 8px;
+}
+
+/* Receipt Styles */
+.receipt-container {
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.receipt-header {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    padding: 25px;
+    color: white;
+    text-align: center;
+}
+
+.receipt-content {
+    padding: 25px;
+    background: white;
+}
+
+.amount-display {
+    text-align: center;
+    margin: 25px 0;
+    padding: 15px;
+    background: linear-gradient(135deg, #f5f7fa, #e4e8f0);
+    border-radius: 10px;
+}
+
+.receipt-footer {
+    background: #f9f9f9;
+    padding: 15px;
+    text-align: center;
+    color: #777;
+    font-size: 12px;
+}
+
+/* Account List Styles */
+.account-card {
+    background: linear-gradient(135deg, #1e1b3b, #2a1a4a);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+.account-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(110,142,251,0.1) 0%, rgba(167,119,227,0) 70%);
+    z-index: -1;
+    transition: all 0.6s ease;
+}
+
+.account-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(110, 142, 251, 0.4);
+}
+
+.account-card:hover::before {
+    transform: rotate(180deg);
+}
+
+.card-header {
+    background: linear-gradient(90deg, #6e8efb, #a777e3);
+    color: white;
+    font-weight: 600;
+    border-bottom: none;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.card-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.3), transparent);
+}
+
+.balance-amount {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #f6d365, #fda085);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 10px 0;
+}
+
+.send-money-btn {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.send-money-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(110, 142, 251, 0.5);
+}
+
+.send-money-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255,255,255,0.1);
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+}
+
+.send-money-btn:hover::after {
+    left: 100%;
+}
+
+.user-header {
+    background: linear-gradient(135deg, #2c3e50, #4a6491);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.return-btn {
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.return-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(72, 187, 120, 0.4);
+}
+
+.account-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}

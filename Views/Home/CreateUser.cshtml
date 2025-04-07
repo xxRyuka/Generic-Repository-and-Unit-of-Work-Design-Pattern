@@ -2,20 +2,20 @@
 
 <div class="form-container">
     <h2 class="form-title">Kullanıcı Oluştur</h2>
-    
+
     <form method="post" asp-action="CreateUser" asp-controller="Home">
         <div class="form-group">
             <label class="form-label" asp-for="Name">Ad</label>
             <input type="text" class="form-input" asp-for="Name" placeholder="Kullanıcı adını girin">
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
-        
+
         <div class="form-group">
             <label class="form-label" asp-for="SurName">Soyad</label>
             <input type="text" class="form-input" asp-for="SurName" placeholder="Kullanıcı soyadını girin">
             <span asp-validation-for="SurName" class="text-danger"></span>
         </div>
-        
+
         <button type="submit" class="submit-btn">
             <i class="fas fa-user-plus"></i> Kullanıcıyı Oluştur
         </button>

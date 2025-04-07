@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bUC2kMM599uKwnvkIdmcgvkXR6wk92dDW25ZguvJ/jI=",
+  "Hash": "7h/kPVWGxKzNmsv0YTecZDJO1tHhkKu2pVk6xrtF+k4=",
   "Source": "rdp",
   "BasePath": "_content/rdp",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Ryuka\\RiderProjects\\rdp\\rdp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\rdp.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Ryuka\\RiderProjects\\rdp\\rdp\\wwwroot\\css\\all.css",
+      "SourceId": "rdp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Ryuka\\RiderProjects\\rdp\\rdp\\wwwroot\\",
+      "BasePath": "_content/rdp",
+      "RelativePath": "css/all.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\all.css"
     },
     {
       "Identity": "C:\\Users\\Ryuka\\RiderProjects\\rdp\\rdp\\wwwroot\\css\\form.css",

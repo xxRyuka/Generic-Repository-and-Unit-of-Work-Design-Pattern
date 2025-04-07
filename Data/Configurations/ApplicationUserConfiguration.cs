@@ -11,7 +11,7 @@ namespace rdp.Data.Configurations
             builder.HasData(
                 new ApplicationUser { Name = "Furkan", SurName = "Kus", Id = 1 },
                 new ApplicationUser { Name = "Sena", SurName = "Kus", Id = 2 },
-                new ApplicationUser { Name = "Timur", SurName = "Kus", Id = 3 });
+                new ApplicationUser { Name = "Timur", SurName = "Erva", Id = 3 });
 
 
             //builder.HasKey(x => x.Id);
